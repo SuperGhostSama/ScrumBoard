@@ -34,7 +34,7 @@
 				</div>
 				
 				<div class="">
-					<button class="btn btn-success rounded-pill"><i class="pe-1 fa fa-plus"></i> Add Task</button>
+					<button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="pe-1 fa fa-plus"></i> Add Task</button>
 				</div>
 			</div>
 			
@@ -143,8 +143,8 @@
 						<div class="" id="in-progress-tasks">
 							<!-- IN PROGRESS TASKS HERE -->
 							<button class="d-flex  list-group-item w-100 text-start">
-								<div class="mt-1">
-									<i class="fa-solid fa-circle-notch text-success fs-3 fa-rotate-90"></i> 
+								<div class="spinner-border spinner-border-sm text-success mt-1" role="status">
+									<span class="visually-hidden">Loading...</span>
 								</div>
 								<div class="ms-3">
 									<div class="fs-5 fw-bolder">Describe steps to reproduce an issue</div>
@@ -159,8 +159,8 @@
 								</div>
 							</button>
 							<button class="d-flex  list-group-item w-100 text-start">
-								<div class="mt-1">
-									<i class="fa-solid fa-circle-notch text-success fs-3 fa-rotate-90"></i> 
+								<div class="spinner-border spinner-border-sm text-success mt-1" role="status">
+									<span class="visually-hidden">Loading...</span>
 								</div>
 								<div class="ms-3">
 									<div class="fs-5 fw-bolder">Provide access</div>
@@ -175,8 +175,8 @@
 								</div>
 							</button>
 							<button class="d-flex  list-group-item w-100 text-start">
-								<div class="mt-1">
-									<i class="fa-solid fa-circle-notch text-success fs-3 fa-rotate-90"></i>
+								<div class="spinner-border spinner-border-sm text-success mt-1" role="status">
+									<span class="visually-hidden">Loading...</span>
 								</div>
 								<div class="ms-3">
 									<div class="fs-5 fw-bolder">Provide environment information</div>
@@ -191,8 +191,8 @@
 								</div>
 							</button>
 							<button class="d-flex  list-group-item w-100 text-start">
-								<div class="mt-1">
-									<i class="fa-solid fa-circle-notch text-success fs-3 fa-rotate-90"></i>
+								<div class="spinner-border spinner-border-sm text-success mt-1" role="status">
+									<span class="visually-hidden">Loading...</span>
 								</div>
 								<div class="ms-3">
 									<div class="fs-5 fw-bolder">Provide a link to an exception and/or a stack trace</div>
@@ -296,8 +296,70 @@
 	<!-- END #app -->
 	
 	<!-- TASK MODAL -->
-	<div class="modal fade" id="modal-task">
-		<!-- Modal content goes here -->
+	 <!-- Button trigger modal -->
+ 
+  
+	<!-- Modal -->
+	<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+			<h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="mb-3">
+					<label for="exampleFormControlInput1" class="form-label">Titel</label>
+					<input type="email" class="form-control" id="exampleFormControlInput1">
+				</div>
+				
+				<label for="exampleFormControlInput1" class="form-label ">Type</label>
+				<div class="form-check my-1 ms-3" >
+					<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+					<label class="form-check-label" for="flexRadioDefault1">
+					  Feature
+					</label>
+				</div>
+			    <div class="form-check my-1 ms-3">
+					<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+					<label class="form-check-label" for="flexRadioDefault2">
+					  Bug
+					</label>
+				</div>
+				
+				<label for="exampleFormControlInput1" class="form-label my-1">Priority</label>
+				<select class="form-select" aria-label="Default select example">
+					<option selected>Please select</option>
+					<option value="1">One</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+				</select>
+				
+				<label for="exampleFormControlInput1" class="form-label my-1">Status</label>
+				<select class="form-select" aria-label="Default select example">
+					<option selected>Please select</option>
+					<option value="1">One</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+				</select>
+
+				<div class="md-form md-outline input-with-post-icon datepicker mb-4">
+                    <label for="inputState" class="form-label my-1">Date</label>
+                    <input placeholder="Select date" type="date" id="example" class="form-control">
+                </div>
+
+
+				<div class="mb-3">
+					<label for="exampleFormControlTextarea1" class="form-label">Description</label>
+					<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+				  </div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-primary">Save</button>
+			</div>
+		</div>
+		</div>
 	</div>
 	
 	<!-- ================== BEGIN core-js ================== -->
