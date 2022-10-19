@@ -47,7 +47,7 @@
 						</div>
 						<div class="" id="to-do-tasks">
 							<!-- TO DO TASKS HERE -->
-							<button class="d-flex  list-group-item w-100 text-start">
+							<!-- <button class="d-flex  list-group-item w-100 text-start">
 								<div class="mt-1">
 									<i class="fa-regular fa-circle-question text-success fs-3"></i>
 								</div>
@@ -70,7 +70,7 @@
 								<div class="ms-3">
 									<div class="fs-5 fw-bolder">Consider creating an acceptance criteria list</div>
 									<div class="">
-										<div class="fs-6 fw-light text-muted">#2 created in 2022-10-08</div>
+										<div class="fs-6 fw-light text-muted">#2 created in 2022-10-08</div><
 										<div class="fs-6 fw-normal" title="Descriptive requirements are very helpful when it comes to understanding the context of a problem, yet finally it is good to precisely specify what is expected. Thus the developer will not have to look for the actual requirements in a long, descriptive text but he will be able to easily get to the essence. One might find that sometimes — when acceptance criteria are well defined — there is little or no need for any additional information. Example:
 						a) User navigates to “/accounts” and clicks on red download CSV button
 						b) Popup appears with two buttons: “This year” and “Last year”
@@ -130,7 +130,7 @@
 										<span class="btn btn-secondary py-3px px-5px">Feature</span>
 									</div>
 								</div>
-							</button>
+							</button> -->
 						</div>
 					</div>
 				</div>
@@ -142,7 +142,7 @@
 						</div>
 						<div class="" id="in-progress-tasks">
 							<!-- IN PROGRESS TASKS HERE -->
-							<button class="d-flex  list-group-item w-100 text-start">
+							<!-- <button class="d-flex  list-group-item w-100 text-start">
 								<div class="spinner-border spinner-border-sm text-success mt-1" role="status">
 									<span class="visually-hidden">Loading...</span>
 								</div>
@@ -205,7 +205,7 @@
 										<span class="btn btn-secondary py-3px px-5px">Bug</span>
 									</div>
 								</div>
-							</button>
+							</button> -->
 						</div>
 					</div>
 				</div>
@@ -217,7 +217,7 @@
 						</div>
 						<div class=" " id="done-tasks">
 							<!-- DONE TASKS HERE -->
-							<button class="d-flex  list-group-item w-100 text-start">
+							<!-- <button class="d-flex  list-group-item w-100 text-start">
 								<div class="mt-1">
 									<i class="fa-regular fa-circle-check text-success fs-2"></i>
 								</div>
@@ -280,7 +280,7 @@
 										<span class="btn btn-secondary py-3px px-5px">Bug</span>
 									</div>
 								</div>
-							</button>
+							</button> -->
 						</div>
 					</div>
 				</div>
@@ -296,10 +296,8 @@
 	<!-- END #app -->
 	
 	<!-- TASK MODAL -->
-	 <!-- Button trigger modal -->
- 
-  
-	<!-- Modal -->
+		<!-- Button trigger modal -->
+			<!-- Modal -->
 	<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 		<div class="modal-dialog">
 		<div class="modal-content">
@@ -309,49 +307,50 @@
 			</div>
 			<div class="modal-body">
 				<div class="mb-3">
-					<label for="exampleFormControlInput1" class="form-label">Titel</label>
-					<input type="email" class="form-control" id="exampleFormControlInput1">
+					<label for="Titel" class="form-label">Titel</label>
+					<input type="email" class="form-control" id="Titel">
 				</div>
 				
 				<label for="exampleFormControlInput1" class="form-label ">Type</label>
 				<div class="form-check my-1 ms-3" >
-					<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-					<label class="form-check-label" for="flexRadioDefault1">
+					<input class="form-check-input" type="radio" name="Type" id="Feature">
+					<label class="form-check-label" for="Feature">
 					  Feature
 					</label>
 				</div>
 			    <div class="form-check my-1 ms-3">
-					<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-					<label class="form-check-label" for="flexRadioDefault2">
+					<input class="form-check-input" type="radio" name="Type" id="Bug" checked>
+					<label class="form-check-label" for="Bug">
 					  Bug
 					</label>
 				</div>
 				
-				<label for="exampleFormControlInput1" class="form-label my-1">Priority</label>
-				<select class="form-select" aria-label="Default select example">
+				<label for="Priority" class="form-label my-1">Priority</label>
+				<select class="form-select" aria-label="Default select example" name="Priority" id="Priority">
 					<option selected>Please select</option>
-					<option value="1">One</option>
-					<option value="2">Two</option>
-					<option value="3">Three</option>
+					<option value="Low">Low</option>
+					<option value="Medium">Medium</option>
+					<option value="High">High</option>
+					<option value="Critical">Critical</option>
 				</select>
 				
-				<label for="exampleFormControlInput1" class="form-label my-1">Status</label>
-				<select class="form-select" aria-label="Default select example">
+				<label for="Status" class="form-label my-1">Status</label>
+				<select class="form-select" aria-label="Default select example" name="Status" id="Status">
 					<option selected>Please select</option>
-					<option value="1">One</option>
-					<option value="2">Two</option>
-					<option value="3">Three</option>
+					<option value="To Do">To Do</option>
+					<option value="In Progress">In Progress</option>
+					<option value="Done">Done</option>
 				</select>
 
 				<div class="md-form md-outline input-with-post-icon datepicker mb-4">
-                    <label for="inputState" class="form-label my-1">Date</label>
-                    <input placeholder="Select date" type="date" id="example" class="form-control">
+                    <label for="Date" class="form-label my-1">Date</label>
+                    <input placeholder="Select date" type="date" id="Date" class="form-control">
                 </div>
 
 
 				<div class="mb-3">
-					<label for="exampleFormControlTextarea1" class="form-label">Description</label>
-					<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+					<label for="Description" class="form-label">Description</label>
+					<textarea class="form-control" id="Description" rows="3"></textarea>
 				  </div>
 			</div>
 			<div class="modal-footer">
@@ -366,5 +365,7 @@
 	<script src="assets/js/vendor.min.js"></script>
 	<script src="assets/js/app.min.js"></script>
 	<!-- ================== END core-js ================== -->
+	<script src="assets/js/data.js"></script>
+	<script src="assets/js/app.js"></script>
 </body>
 </html>
