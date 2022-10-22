@@ -13,9 +13,8 @@ function createTask() {
     // initialiser task form
     document.getElementById('Form').reset();
     // Afficher le boutton save
-    
-    // Ouvrir modal form
-    
+    document.getElementById('Save').style.display='block';
+    document.getElementById('UpdateAndDelete').style.display='none';
 }
 
 function saveTask() {
