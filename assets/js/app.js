@@ -11,7 +11,7 @@
                            
 function createTask() {
     // initialiser task form
-
+    
     // Afficher le boutton save
 
     // Ouvrir modal form
@@ -19,14 +19,22 @@ function createTask() {
 }
 
 function saveTask() {
-    // Recuperer task attributes a partir les champs input
-
-    // Créez task object
-
+  // Recuperer task attributes a partir les champs input // Créez task object
+    let newTask =
+    {
+        'title': document.querySelector('#Title').value,
+        'type': document.getElementsByName('Type:checked').value,
+        'priority': document.querySelector('#Priority').value,
+        'status': document.querySelector('#status').value,
+        'date': document.querySelector('#date').value,
+        'description': document.querySelector('#description').value,
+    };
+    console.log(newTask);
     // Ajoutez object au Array
-
+    tasks.push(newTask);
+   
     // refresh tasks
-    
+     reloadTasks();
 }
 
 function editTask(index) {
