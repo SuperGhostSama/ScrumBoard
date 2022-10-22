@@ -23,11 +23,11 @@ function saveTask() {
     let newTask =
     {
         'title': document.querySelector('#Title').value,
-        'type': document.getElementsByName('Type:checked').value,
+        'type': document.querySelector('input[name="Type"]:checked').value,
         'priority': document.querySelector('#Priority').value,
-        'status': document.querySelector('#status').value,
-        'date': document.querySelector('#date').value,
-        'description': document.querySelector('#description').value,
+        'status': document.querySelector('#Status').value,
+        'date': document.querySelector('#Date').value,
+        'description': document.querySelector('#Description').value,
     };
     console.log(newTask);
     // Ajoutez object au Array
