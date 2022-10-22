@@ -11,9 +11,9 @@
                            
 function createTask() {
     // initialiser task form
-    
+    document.getElementById('Form').reset();
     // Afficher le boutton save
-
+    
     // Ouvrir modal form
     
 }
@@ -29,7 +29,6 @@ function saveTask() {
         'date': document.querySelector('#Date').value,
         'description': document.querySelector('#Description').value,
     };
-    console.log(newTask);
     // Ajoutez object au Array
     tasks.push(newTask);
    
