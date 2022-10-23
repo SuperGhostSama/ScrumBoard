@@ -97,6 +97,8 @@ function reloadTasks() {
      document.getElementById("done-tasks").innerHTML="";
     // Set Task count
     let index=0;//so that the array starts from 0
+    let counterToDo=0, counterInProgress=0, counterDone=0;//Counters for the header of each card
+
     tasks.forEach(task => {
         if(task.status==="To Do"){
         ToDo.innerHTML +=           `<button onclick='editTask(${index})' class="d-flex  list-group-item w-100 text-start">
@@ -106,7 +108,7 @@ function reloadTasks() {
                                         <div class="ms-3">
                                             <div class="fs-5 fw-bolder">${task.title}</div>
                                             <div class="">
-                                                <div class="fs-6 fw-light text-muted">${task.date}</div>
+                                                <div class="fs-6 fw-light text-muted">#${index+1} ${task.date}</div>
                                                 <div class="fs-6 fw-normal text-truncate" style="max-width: 16rem">${task.description}</div>
                                             </div>
                                             <div class="py-1">
@@ -115,6 +117,7 @@ function reloadTasks() {
                                             </div>
                                         </div>
                                     </button>`;
+                                    counterToDo++;
                             }
         if(task.status==="In Progress"){
         InProgress.innerHTML +=         `<button onclick='editTask(${index})' class="d-flex  list-group-item w-100 text-start">
@@ -124,7 +127,7 @@ function reloadTasks() {
                                             <div class="ms-3">
                                             <div class="fs-5 fw-bolder">${task.title}</div>
                                             <div class="">
-                                                <div class="fs-6 fw-light text-muted">${task.date}</div>
+                                                <div class="fs-6 fw-light text-muted">#${index+1} ${task.date}</div>
                                                 <div class="fs-6 fw-normal text-truncate" style="max-width: 16rem">${task.description}</div>
                                             </div>
                                             <div class="py-1">
@@ -134,6 +137,7 @@ function reloadTasks() {
                                         
                                             </div>
                                         </button>`
+                                        counterInProgress++;
                     }
         else if (task.status==="Done"){
         Done.innerHTML  +=          `<button onclick='editTask(${index})' class="d-flex  list-group-item w-100 text-start">
@@ -143,7 +147,7 @@ function reloadTasks() {
                                     <div class="ms-3">
                                     <div class="fs-5 fw-bolder">${task.title}</div>
                                     <div class="">
-                                        <div class="fs-6 fw-light text-muted">${task.date}</div>
+                                        <div class="fs-6 fw-light text-muted">#${index+1} ${task.date}</div>
                                         <div class="fs-6 fw-normal text-truncate" style="max-width: 16rem">${task.description}</div>
                                     </div>
                                     <div class="py-1">
@@ -153,7 +157,12 @@ function reloadTasks() {
                                 
                                     </div>
                                     </button>`
+                                    counterDone++;
         }
       index++;
     } );
+    //showing the counter in the header of each card
+    document.getElementById('to-do-tasks-count').innerText=counterToDo;
+    document.getElementById('in-progress-tasks-count').innerText=counterInProgress;
+    document.getElementById('done-tasks-count').innerText=counterDone;
 }
