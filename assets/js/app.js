@@ -38,51 +38,56 @@ function saveTask() {
 
 function editTask(index) {
     // Initialisez task form
+    if(tasks[index].type=='Bug'){
+        document.getElementById('Bug').checked=true
+    }
+    else{
+        document.getElementById('Feature').checked=true
+    }
     document.getElementById('Title').value=tasks[index].title;
     document.getElementById('Priority').value=tasks[index].priority;
     document.getElementById('Status').value=tasks[index].status;
     document.getElementById('Date').value=tasks[index].date;
     document.getElementById('Description').value=tasks[index].description;
-    $('#staticBackdrop').modal('show');
-
-    // Affichez updates
-
-    // Delete Button
-
-    // Définir l’index en entrée cachée pour l’utiliser en Update et Delete
-
-    // Definir FORM INPUTS
-
-    // Ouvrir Modal form
+    $('#staticBackdrop').modal('show');//used to show modal when editing
+        
+    document.getElementById('Save').style.display='none';//hiding the save button
+    // Delete Button // Affichez updates
+    document.getElementById('UpdateAndDelete').style.display='block';//showing the update and delete button
+   //Making the id value stocked in the index parametre so that when a button is getting modified it shows the correct data in it 
+    document.getElementById('id').value=index
 }
 
 function updateTask() {
-    // GET TASK ATTRIBUTES FROM INPUTS
-
-    // Créez task object
-
-    // Remplacer ancienne task par nouvelle task
-
-    // Fermer Modal form
-
-    // Refresh tasks
     
+    // Créez task object
+    let newTask =
+    {
+        'title': document.querySelector('#Title').value,
+        'type': document.querySelector('input[name="Type"]:checked').value,
+        'priority': document.querySelector('#Priority').value,
+        'status': document.querySelector('#Status').value,
+        'date': document.querySelector('#Date').value,
+        'description': document.querySelector('#Description').value,
+    };
+    let id=document.querySelector('#id').value
+    // Remplacer ancienne task par nouvelle task
+    tasks[id]=newTask; //replacing the changes in the old object
+    // Fermer Modal form
+    $('#staticBackdrop').modal('hide');// making the modal hide after updating
+    // Refresh tasks
+    reloadTasks();
 }
 
 function deleteTask() {
     // Get index of task in the array
-
+    let index=document.querySelector('#id').value //id is under the modal titel html its used 
     // Remove task from array by index splice function
-
+    tasks.splice(index,1); 
     // close modal form
-
+    $('#staticBackdrop').modal('hide');
     // refresh tasks
-}
-
-function initTaskForm() {
-    // Clear task form from data
-
-    // Hide all action buttons
+    reloadTasks();
 }
 
 function reloadTasks() {
