@@ -6,7 +6,7 @@
  let InProgress = document.getElementById("in-progress-tasks");
  let Done = document.getElementById("done-tasks");
 
- reloadTasks() 
+ reloadTasks() ;
 
                            
 function createTask() {
@@ -31,12 +31,14 @@ function saveTask() {
     };
     // Ajoutez object au Array
     tasks.push(newTask);
-   
+    $('#staticBackdrop').modal('hide');// making the modal hide after saving a task
     // refresh tasks
      reloadTasks();
 }
 
 function editTask(index) {
+    //Making the id value stocked in the index parametre so that when a button is getting modified it shows the correct data in it 
+    document.getElementById('id').value=index
     // Initialisez task form
     if(tasks[index].type=='Bug'){
         document.getElementById('Bug').checked=true
@@ -54,8 +56,7 @@ function editTask(index) {
     document.getElementById('Save').style.display='none';//hiding the save button
     // Delete Button // Affichez updates
     document.getElementById('UpdateAndDelete').style.display='block';//showing the update and delete button
-   //Making the id value stocked in the index parametre so that when a button is getting modified it shows the correct data in it 
-    document.getElementById('id').value=index
+   
 }
 
 function updateTask() {
@@ -116,7 +117,7 @@ function reloadTasks() {
                                                 <span class="btn btn-secondary py-3px px-5px">${task.type}</span>
                                             </div>
                                         </div>
-                                    </button>`;
+                                    </button>`;//onclick='editTask(${index})'
                                     counterToDo++;
                             }
         if(task.status==="In Progress"){
