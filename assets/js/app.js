@@ -8,7 +8,7 @@
 
  reloadTasks() ;
 
-                           
+                   
 function createTask() {
     // Clear form
     document.getElementById('Form').reset();
