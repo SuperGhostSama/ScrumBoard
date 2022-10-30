@@ -42,7 +42,7 @@ $allTasks = getTasks();
 				</div>
 
 				<div class="">
-					<button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="pe-1 fa fa-plus"></i> Add Task</button>
+					<button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#modalForm"><i class="pe-1 fa fa-plus"></i> Add Task</button>
 				</div>
 			</div>
 
@@ -65,14 +65,14 @@ $allTasks = getTasks();
 											<i class="fa-regular fa-circle-question text-success fs-3"></i>
 										</div>
 										<div class="ms-3">
-											<div class="fs-5 fw-bolder"> <?php echo $task['title']; ?> </div>
+											<div class="fs-5 fw-bolder"> <?php echo $tasks['title']; ?> </div>
 											<div class="">
-												<div class="fs-6 fw-light text-muted"> <?php echo $task['task_datetime']; ?> </div>
-												<div class="fs-6 fw-normal text-truncate" style="max-width: 16rem"> <?php echo $task['description']; ?> </div>
+												<div class="fs-6 fw-light text-muted"> <?php echo $tasks['task_datetime']; ?> </div>
+												<div class="fs-6 fw-normal text-truncate" style="max-width: 16rem"> <?php echo $tasks['description']; ?> </div>
 											</div>
 											<div class="py-1">
-												<span class="btn btn-primary py-3px px-5px"> <?php echo $task['priorityName']; ?> </span>
-												<span class="btn btn-secondary py-3px px-5px"> <?php echo $task['typeName']; ?> </span>
+												<span class="btn btn-primary py-3px px-5px"> <?php echo $tasks['priorityName']; ?> </span>
+												<span class="btn btn-secondary py-3px px-5px"> <?php echo $tasks['typeName']; ?> </span>
 											</div>
 										</div>
 									</button>
@@ -123,12 +123,12 @@ $allTasks = getTasks();
 	<!-- TASK MODAL -->
 	<!-- Button trigger modal -->
 	<!-- Modal -->
-	<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModelLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<form method="post" id="Form">
 					<div class="modal-header">
-						<h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+						<h1 class="modal-title fs-5" id="exampleModelLabel">Modal title</h1>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
@@ -182,7 +182,7 @@ $allTasks = getTasks();
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-						<button type="submit" name="saveForm" class="btn btn-primary" id="Save">Save</button>
+						<button type="submit" name="saveForm" class="btn btn-primary" id="">Save</button>
 						<div id="UpdateAndDelete">
 							<button type="submit" name="update" class="btn btn-warning">Update</button>
 							<button type="submit" name="delete" class="btn btn-danger">Delete</button>
@@ -194,7 +194,7 @@ $allTasks = getTasks();
 	</div>
 	<!-- ================== Jquery ================== -->
 	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-	<!-- ================== BEGIN core-js ================== -->
+	<!--  ================== BEGIN core-js ================== -->
 	<script src="assets/js/vendor.min.js"></script>
 	<script src="assets/js/app.min.js"></script>
 	<!-- ================== END core-js ================== -->
